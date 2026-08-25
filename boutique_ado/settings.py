@@ -28,7 +28,10 @@ SECRET_KEY = 'django-insecure-cu!q^f2ttg&2yp1c+)+5wvm@!yv@*_q6lgjp_e3=r81-vd0#a^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.01',  # vs code preview
+    'localhost',  # listen for stripe webhooks
+]
 
 
 # Application definition
@@ -179,6 +182,7 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 
 # Default primary key field type
